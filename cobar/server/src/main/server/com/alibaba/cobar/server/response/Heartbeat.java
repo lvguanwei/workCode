@@ -39,7 +39,7 @@ public class Heartbeat {
             ok.serverStatus = 2;
             ok.write(c);
             if (HEARTBEAT.isInfoEnabled()) {
-                HEARTBEAT.info(responseMessage("OK", c, hp.id));
+//                HEARTBEAT.info(responseMessage("OK", c, hp.id));
             }
         } else {
             ErrorPacket error = new ErrorPacket();

@@ -143,7 +143,7 @@ public class CobarDetector extends BackendConnection {
             hp.id = heartbeat.detectCount.incrementAndGet();
             hp.write(this);
             if (HEARTBEAT.isInfoEnabled()) {
-                HEARTBEAT.info(heartbeat.requestMessage(CobarHeartbeat.SEND, String.valueOf(hp.id).getBytes()));
+//                HEARTBEAT.info(heartbeat.requestMessage(CobarHeartbeat.SEND, String.valueOf(hp.id).getBytes()));
             }
         } else {
             authenticate();

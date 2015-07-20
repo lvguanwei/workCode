@@ -18,20 +18,20 @@
 <cobar:server xmlns:cobar="http://cobar.alibaba.com/">
   
   <!-- 系统参数定义，服务端口、管理端口，处理器个数、线程池等。 -->
-  <!--
+  <!-- -->
   <system>
     <property name="serverPort">8066</property>
     <property name="managerPort">9066</property>
-    <property name="initExecutor">16</property>
-    <property name="timerExecutor">4</property>
-    <property name="managerExecutor">4</property>
-    <property name="processors">4</property>
-    <property name="processorHandler">8</property>
-    <property name="processorExecutor">8</property>
+    <property name="initExecutor">2</property>
+    <property name="timerExecutor">2</property>
+    <property name="managerExecutor">2</property>
+    <property name="processors">2</property>
+    <property name="processorHandler">64</property>
+    <property name="processorExecutor">64</property>
     <property name="clusterHeartbeatUser">_HEARTBEAT_USER_</property>
     <property name="clusterHeartbeatPass">_HEARTBEAT_PASS_</property>
   </system>
-  -->
+  
 
   <!-- 用户访问定义，用户名、密码、schema等信息。 -->
   <user name="test">

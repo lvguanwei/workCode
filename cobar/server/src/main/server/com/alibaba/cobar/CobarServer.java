@@ -121,7 +121,7 @@ public class CobarServer {
         Map<String, MySQLDataNode> dataNodes = config.getDataNodes();
         LOGGER.info("Initialize dataNodes ...");
         for (MySQLDataNode node : dataNodes.values()) {
-            node.init(1, 0);
+            node.init(10, 0);
         }
         timer.schedule(dataNodeIdleCheck(), 0L, system.getDataNodeIdleCheckPeriod());
         timer.schedule(dataNodeHeartbeat(), 0L, system.getDataNodeHeartbeatPeriod());

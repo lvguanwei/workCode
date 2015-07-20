@@ -17,38 +17,53 @@
 <!DOCTYPE cobar:schema SYSTEM "schema.dtd">
 <cobar:schema xmlns:cobar="http://cobar.alibaba.com/">
 
-  <!-- schema定义 -->
-  <schema name="dbtest" dataNode="dnTest1">
-    <table name="tb2" dataNode="dnTest2,dnTest3" rule="rule1" />
+   <!-- schema定义 -->
+  <schema name="dbtest" >
+    <table name="alarm_log" dataNode="dnTest1"  ruleRequired="false"/>
   </schema>
 
-  <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。 -->
+  <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->
   <dataNode name="dnTest1">
     <property name="dataSource">
-      <dataSourceRef>dsTest[0]</dataSourceRef>
+      <dataSourceRef>dsTest</dataSourceRef>
     </property>
+    <property name="poolSize">10</property>
+    <property name="heartbeatSQL">select user()</property>
+    <property name="idleTimeout">300000</property>
+    <property name="waitTimeout">300000</property>
   </dataNode>
+  <!--  
   <dataNode name="dnTest2">
     <property name="dataSource">
       <dataSourceRef>dsTest[1]</dataSourceRef>
     </property>
-  </dataNode>
+    <property name="poolSize">2</property>
+    <property name="heartbeatSQL">select user()</property>
+    <property name="idleTimeout">300000</property>
+    <property name="waitTimeout">300000</property>
+  </dataNode> -->
+  <!--  
   <dataNode name="dnTest3">
     <property name="dataSource">
       <dataSourceRef>dsTest[2]</dataSourceRef>
     </property>
+    <property name="poolSize">2</property>
+    <property name="heartbeatSQL">select user()</property>
+    <property name="idleTimeout">300000</property>
+    <property name="waitTimeout">300000</property>
   </dataNode>
-
-  <!-- 数据源定义，数据源是一个具体的后端数据连接的表示。 -->
+ -->
+  <!-- 数据源定义，数据源是一个具体的后端数据连接的表示。-->
   <dataSource name="dsTest" type="mysql">
     <property name="location">
-      <location>10.20.153.177:3316/offer1</location>
-      <location>10.20.153.177:3316/offer1</location>
-      <location>10.20.153.177:3316/offer1</location>
+      <location>172.7.4.60:3306/test</location>
+    <!--  <location>172.7.4.60:3306/dbtest2</location>
+      <location>127.0.0.1:3306/dbtest3</location>  -->
     </property>
-    <property name="user">offer</property>
-    <property name="password">offer</property>
+    <property name="user">testuser</property>
+    <property name="password">testuser</property>
     <property name="sqlMode">STRICT_TRANS_TABLES</property>
   </dataSource>
+
 
 </cobar:schema>

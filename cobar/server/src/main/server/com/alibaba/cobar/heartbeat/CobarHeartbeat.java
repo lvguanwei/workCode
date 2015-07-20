@@ -189,7 +189,7 @@ public class CobarHeartbeat {
         case OK_STATUS:
             setOk(detector);
             if (HEARTBEAT.isInfoEnabled()) {
-                HEARTBEAT.info(requestMessage(OK_STATUS, message));
+//               HEARTBEAT.info(requestMessage(OK_STATUS, message));
             }
             break;
         case OFF_STATUS:

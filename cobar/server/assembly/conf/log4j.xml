@@ -16,7 +16,13 @@
 -->
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
-
+   <appender name="console"   
+        class="org.apache.log4j.ConsoleAppender">  
+        <param name="Threshold" value="debug"></param>  
+        <layout class="org.apache.log4j.TTCCLayout">  
+            <param name="ConversionPattern" value="TTCCLayout"></param>  
+        </layout>  
+  </appender>  
   <appender name="STDOUT" class="org.apache.log4j.DailyRollingFileAppender">
     <param name="file" value="${cobar.home}/logs/stdout.log" />
     <param name="append" value="true" />
@@ -43,25 +49,31 @@
   </appender>
 
   <logger name="com.alibaba.cobar.CobarServer">
-    <level value="info" />
+    <level value="debug" />
+    <appender-ref ref="console" />
   </logger>
   <logger name="com.alibaba.cobar.net.handler.FrontendAuthenticator">
-    <level value="info" />
+    <level value="debug" />
+    <appender-ref ref="console" />
   </logger>
   <logger name="com.alibaba.cobar.mysql.MySQLDataNode">
-    <level value="info" />
+    <level value="debug" />
+    <appender-ref ref="console" />
   </logger>
   <logger name="alarm">
-    <level value="error" />
+    <level value="debug" />
     <appender-ref ref="ALARM" />
+    <appender-ref ref="console" />
   </logger>
   <logger name="heartbeat" additivity="false">
-    <level value="warn" />
+    <level value="debug" />
     <appender-ref ref="HEARTBEAT" />
+    <appender-ref ref="console" />
   </logger>
 
   <root>
-    <level value="warn" />
+    <level value="debug" />
+    <appender-ref ref="console" />
     <appender-ref ref="STDOUT" />
   </root>
 

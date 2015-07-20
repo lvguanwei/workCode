@@ -119,6 +119,7 @@ public final class MySQLDataSource {
      * @return never null
      */
     public Channel getChannel() throws Exception {
+        long beginTime = System.currentTimeMillis();
         // 尝试从池中取得可用资源
         final ReentrantLock lock = this.lock;
         lock.lock();
@@ -127,7 +128,7 @@ public final class MySQLDataSource {
             if (activeCount >= size) {
                 StringBuilder s = new StringBuilder();
                 s.append(Alarms.DEFAULT).append("[name=").append(name).append(",active=");
-                s.append(activeCount).append(",size=").append(size).append(']');
+                s.append(activeCount).append(",size=").append(size).append(",itemSize=").append(this.items.length).append(']');
                 ALARM.error(s.toString());
             }
 
@@ -166,6 +167,12 @@ public final class MySQLDataSource {
             }
             c.closeNoActive();
             throw e;
+        }
+        long endTime = System.currentTimeMillis();
+        if(endTime - beginTime>10){
+            StringBuilder s = new StringBuilder();
+            s.append(Alarms.DEFAULT).append("get mysql connect time too long,time = ").append(endTime - beginTime);
+            ALARM.error(s.toString());
         }
         return c;
     }

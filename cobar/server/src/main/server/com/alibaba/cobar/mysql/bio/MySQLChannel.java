@@ -203,15 +203,7 @@ public final class MySQLChannel implements Channel {
     public BinaryPacket execute(RouteResultsetNode rrn, ServerConnection sc, boolean autocommit) throws IOException {
         // 状态一致性检查
         if (this.charsetIndex != sc.getCharsetIndex()) {
-            /*如果后端MySQL服务器配置了character_set_server=utf8mb4,
-            并且数据库客户端要求使用uft8，
-            我们将不发送客户端的字符集要求。
-            这种情况在我们使用mysql官方的Connector/J编程的时候遇见，
-            详细见：http://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-troubleshooting.html#qandaitem-15-1-15
-                    https://dev.mysql.com/doc/relnotes/connector-j/en/news-5-1-13.html
-            */
-            if(this.charsetIndex != 45 && sc.getCharsetIndex() != 33)
-                sendCharset(sc.getCharsetIndex());
+            sendCharset(sc.getCharsetIndex());
         }
         if (this.txIsolation != sc.getTxIsolation()) {
             sendTxIsolation(sc.getTxIsolation());
@@ -615,6 +607,7 @@ public final class MySQLChannel implements Channel {
         } finally {
             try {
                 socket.close();
+                LOGGER.debug(toString()+" socket close");
             } catch (Throwable e) {
                 LOGGER.error(toString(), e);
             }

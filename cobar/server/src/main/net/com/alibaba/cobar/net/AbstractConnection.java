@@ -157,7 +157,7 @@ public abstract class AbstractConnection implements NIOConnection {
     @Override
     public void read() throws IOException {
         ByteBuffer buffer = this.readBuffer;
-        int got = channel.read(buffer);
+        int got = channel.read(buffer); //把数据读入缓存中
         lastReadTime = TimeUtil.currentTimeMillis();
         if (got < 0) {
             throw new EOFException();

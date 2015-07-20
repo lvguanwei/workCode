@@ -23,6 +23,17 @@
       <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p %m%n" />
     </layout>
   </appender>
+  
+  <appender name="STDOUTFILE" class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="encoding" value="UTF-8" />
+    <param name="file" value="D:/logs/stdout.log" />
+    <param name="append" value="true" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p %m%n" />
+    </layout>
+  </appender>
+  
+  
   <appender name="ALARM" class="org.apache.log4j.ConsoleAppender">
     <param name="encoding" value="UTF-8" />
     <layout class="org.apache.log4j.PatternLayout">
@@ -63,6 +74,7 @@
   <root>
     <level value="warn" />
     <appender-ref ref="STDOUT" />
+    <appender-ref ref="STDOUTFILE" />
   </root>
 
 </log4j:configuration>
