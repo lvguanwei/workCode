@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+		<title class="lang" langKey="xxxx">添加商品</title>
+		<link href='css/bootstrap.min.css' rel="stylesheet" />
+		<link href="css/style.css" type="text/css" rel="stylesheet"/>
+    	<script type="text/javascript" src="js/jquery.min.js"></script>
+    	<script src="js/lang.js" type="text/javascript" charset="utf8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf8"></script>
+	</head>
+	<body>
+		
+    	<div class="container">
+          				<h3>
+          					Stat Index
+          					<a href="basic.json" target="_blank" class="lang" langKey="ViewJSONAPI">View JSON API</a>
+          				</h3>
+						<table id="dataTable" style="background-color: #fff" class="table table-bordered responsive-utilities">
+							<tr >
+								<td valign="top" width="100" class="td_lable lang"  langKey="namekey">名称：</td>
+								<td id="nametd" width="95%"><input type="text" id="name" name="name" /></td>
+							</tr>
+							<tr >
+								<td valign="top" class="td_lable lang" langKey="pricekey">价格：</td>
+								<td id="pricetd"><input type="text" id="price" name="price" /></td>
+							</tr>
+							<tr >
+								<td valign="top" class="td_lable lang" langKey="provincekey">省份：</td>
+								<td id="provincetd"><input type="text" id="province" name="province" /></td>
+							</tr>
+							<tr >
+								<td valign="top" class="td_lable lang" langKey="citykey">城市：</td>
+								<td id="citytd"><input type="text" id="city" name="city" /></td>
+							</tr>
+							<tr >
+								<td valign="top" class="td_lable lang" langKey="locationkey">地址：</td>
+								<td id="locationtd"><input type="text" id="location" name="location" /></td>
+							</tr>
+							<tr >
+								<td valign="top" class="td_lable lang" langKey="isPhysicalStoreKey">实体店铺：</td>
+								<td id="isPhysicalStore"></td>
+							</tr>
+							<tr>
+								<td valign="top" class="td_lable lang" langKey="JavaClassPath"> JavaClassPath </td>
+								<td id="JavaClassPath"></td>
+							</tr>
+							<tr >
+								<td valign="top" class="td_lable lang" langKey="StartTime"> StartTime </td>
+								<td id="StartTime"></td>
+							</tr>
+						</table>
+          			</div>
+		<script type="text/javascript">
+			$.namespace("druid.index");
+			druid.index = function () {  
+				return  {
+					init : function() {
+						druid.common.buildHead(0);
+						this.ajaxRequestForBasicInfo();
+					},
+					
+					ajaxRequestForBasicInfo : function() {
+						$.ajax({
+							type: 'POST',
+							url: "basic.json",
+							success: function(data) {
+								$("#DruidVersion").text(data.Content.Version)
+								var driversList = data.Content.Drivers;
+								if (driversList) {
+									var driverHtml = '';
+									for ( var i = 0; i < driversList.length; i++) {
+										var driver = driversList[i];
+										driverHtml += driver + '<br/>';
+									}
+									$("#DruidDrivers").html(driverHtml);
+								}
+								$("#ResetEnable").text(data.Content.ResetEnable)
+								$("#ResetCount").text(data.Content.ResetCount)
+								$("#JavaVersion").text(data.Content.JavaVersion)
+								$("#JavaVMName").text(data.Content.JavaVMName)
+								$("#JavaClassPath").html(data.Content.JavaClassPath.split(/;|:/).join("<br/>"))
+								$("#StartTime").text(data.Content.StartTime)
+								
+								druid.lang.trigger();
+							},
+							dataType: "json"
+						});
+					}
+				}
+			}();
+			
+			$(document).ready(function() {
+				druid.index.init();
+			});
+		</script>
+	</body>
+</html>
