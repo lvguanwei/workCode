@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+	
+  <classPathEntry location="D:\maven_lib\mysql\mysql-connector-java\5.1.24\mysql-connector-java-5.1.24.jar" />
+  
+  <context id="MySQLTables" targetRuntime="MyBatis3">
+  	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+  	
+  	<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://172.7.4.58:3306/emall"
+        userId="testuser"
+        password="testuser">
+    </jdbcConnection>
+    
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+    
+    <!-- 生成vo对象 -->
+    <javaModelGenerator targetPackage="com.lvguanwei.emall.user.dao.model"   targetProject="emall-web">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+	<!-- 采用ANNOTATEDMAPPER这种类型的Client，是不需要生成SQLMap文件的，这样比较方便一些 -->
+    <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.lvguanwei.emall.user.dao"  targetProject="emall-web"> <!--\src\main\java">-->
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+	<!-- 需要生成的数据库表的List -->
+    <table tableName="user" domainObjectName="UserDO" >
+    	<generatedKey column="id" sqlStatement="select last_insert_id()" />
+    </table>
+  </context>
+</generatorConfiguration>
