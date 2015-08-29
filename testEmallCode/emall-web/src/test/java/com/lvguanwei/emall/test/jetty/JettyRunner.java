@@ -24,6 +24,7 @@ public class JettyRunner {
         context.setConfigurationClasses(new String[] { "org.mortbay.jetty.webapp.WebInfConfiguration",
                 "org.mortbay.jetty.plus.webapp.EnvConfiguration", "org.mortbay.jetty.plus.webapp.Configuration",
                 "org.mortbay.jetty.webapp.JettyWebXmlConfiguration", "org.mortbay.jetty.webapp.TagLibConfiguration" });
+        server.setAttribute("useFileMappedBuffer", "false");
         server.setHandler(context);
         server.setStopAtShutdown(true);
         server.setSendServerVersion(true);

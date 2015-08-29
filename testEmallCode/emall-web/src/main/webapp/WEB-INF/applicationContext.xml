@@ -11,7 +11,7 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	
-	<context:property-placeholder location="config.ini"/>
+	<context:property-placeholder location="/WEB-INF/config.ini"/>
 	
 	<!-- 由于以JAR包的方式被其他工程依赖，所以数据源的名称需要起一个不会冲突的名字 -加一个Category前缀 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -52,10 +52,5 @@
 	</bean>
 	
 	<context:component-scan base-package="com.lvguanwei.emall.product.service,com.lvguanwei.emall.user.service" />	
-	
-	
-</bean>  
-
 		
-	
 </beans>

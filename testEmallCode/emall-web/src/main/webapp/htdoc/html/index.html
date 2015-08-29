@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-		<title class="lang" langKey="xxxx">添加商品</title>
-		<link href='css/bootstrap.min.css' rel="stylesheet" />
-		<link href="css/style.css" type="text/css" rel="stylesheet"/>
+		<title class="lang" >添加商品</title>
+		<link href='../css/bootstrap.min.css' type="text/css" rel="stylesheet" />
+		<link href="../css/style.css" type="text/css" rel="stylesheet"/>
     	<script type="text/javascript" src="js/jquery.min.js"></script>
     	<script src="js/lang.js" type="text/javascript" charset="utf8"></script>
 		<script src="js/common.js" type="text/javascript" charset="utf8"></script>
@@ -13,42 +13,51 @@
 		
     	<div class="container">
           				<h3>
-          					Stat Index
-          					<a href="basic.json" target="_blank" class="lang" langKey="ViewJSONAPI">View JSON API</a>
+          					添加商品
           				</h3>
 						<table id="dataTable" style="background-color: #fff" class="table table-bordered responsive-utilities">
 							<tr >
-								<td valign="top" width="100" class="td_lable lang"  langKey="namekey">名称：</td>
-								<td id="nametd" width="95%"><input type="text" id="name" name="name" /></td>
+								<td valign="top" width="200" class="td_lable lang"  langKey="namekey">名称：</td>
+								<td id="nametd" width="500"><input type="text" id="name" name="name" /></td>
 							</tr>
 							<tr >
-								<td valign="top" class="td_lable lang" langKey="pricekey">价格：</td>
+								<td valign="top" width="200" class="td_lable lang" langKey="pricekey">价格：</td>
 								<td id="pricetd"><input type="text" id="price" name="price" /></td>
 							</tr>
 							<tr >
-								<td valign="top" class="td_lable lang" langKey="provincekey">省份：</td>
+								<td valign="top" width="200" class="td_lable lang" langKey="provincekey">省份：</td>
 								<td id="provincetd"><input type="text" id="province" name="province" /></td>
 							</tr>
 							<tr >
-								<td valign="top" class="td_lable lang" langKey="citykey">城市：</td>
+								<td valign="top" width="200" class="td_lable lang" langKey="citykey">城市：</td>
 								<td id="citytd"><input type="text" id="city" name="city" /></td>
 							</tr>
 							<tr >
-								<td valign="top" class="td_lable lang" langKey="locationkey">地址：</td>
+								<td valign="top" width="200" class="td_lable lang" langKey="locationkey">地址：</td>
 								<td id="locationtd"><input type="text" id="location" name="location" /></td>
 							</tr>
 							<tr >
-								<td valign="top" class="td_lable lang" langKey="isPhysicalStoreKey">实体店铺：</td>
-								<td id="isPhysicalStore"></td>
+								<td valign="top" width="200" class="td_lable lang" langKey="isPhysicalStoreKey">实体店铺：</td>
+								<td id="isPhysicalStoretd"><select id="isPhysicalStore" name="isPhysicalStore" ><option value="0" >否</option><option value="1">是</option></select></td>
 							</tr>
 							<tr>
-								<td valign="top" class="td_lable lang" langKey="JavaClassPath"> JavaClassPath </td>
-								<td id="JavaClassPath"></td>
+								<td valign="top" width="200" class="td_lable lang" langKey="isDeliveryDoorKey">送货上门：</td>
+								<td id="isDeliveryDoortd"><select id="isDeliveryDoor" name="isDeliveryDoor" ><option value="0" >不支持</option><option value="1">支持</option></select></td>
+							</tr>
+							
+							<tr >
+								<td valign="top" width="200" class="td_lable lang" langKey="isUsedGoodsKey">二手商品：</td>
+								<td id="isUsedGoodstd"><select id="v" name="isUsedGoods" ><option value="0" >否</option><option value="1">是</option></select></td>
 							</tr>
 							<tr >
-								<td valign="top" class="td_lable lang" langKey="StartTime"> StartTime </td>
-								<td id="StartTime"></td>
+								<td valign="top" width="200" class="td_lable lang" langKey="isChangedEachotherKey">支持以物换物：</td>
+								<td id="isChangedEachothertd"><select id="isChangedEachother" name="isChangedEachother" ><option value="0" >不支持</option><option value="1">支持</option></select></td>
 							</tr>
+							<tr >
+								<td valign="top" width="200" class="td_lable lang" langKey="isHotKey">热卖商品：</td>
+								<td id="isHottd"><select id="isHot" name="isHot" ><option value="0" >非热门</option><option value="1">热门</option></select></td>
+							</tr>
+							
 						</table>
           			</div>
 		<script type="text/javascript">

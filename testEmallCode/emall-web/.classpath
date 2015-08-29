@@ -21,12 +21,16 @@
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/3.2.5.RELEASE/spring-jdbc-3.2.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-jdbc/3.2.5.RELEASE/spring-jdbc-3.2.5.RELEASE-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/3.2.5.RELEASE/spring-tx-3.2.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-tx/3.2.5.RELEASE/spring-tx-3.2.5.RELEASE-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-web/3.2.5.RELEASE/spring-web-3.2.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-web/3.2.5.RELEASE/spring-web-3.2.5.RELEASE-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-webmvc/3.2.5.RELEASE/spring-webmvc-3.2.5.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty/6.1.26.cloudera.4/jetty-6.1.26.cloudera.4.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty/6.1.26.cloudera.4/jetty-6.1.26.cloudera.4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-util/6.1.26.cloudera.4/jetty-util-6.1.26.cloudera.4.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-util/6.1.26.cloudera.4/jetty-util-6.1.26.cloudera.4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar" sourcepath="M2_REPO/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-plus/6.1.26/jetty-plus-6.1.26.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-plus/6.1.26/jetty-plus-6.1.26-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/geronimo-spec/geronimo-spec-jta/1.0.1B-rc4/geronimo-spec-jta-1.0.1B-rc4.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-naming/6.1.26.cloudera.4/jetty-naming-6.1.26.cloudera.4.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-naming/6.1.26.cloudera.4/jetty-naming-6.1.26.cloudera.4-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17.jar" sourcepath="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar" sourcepath="M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar" sourcepath="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.24/mysql-connector-java-5.1.24.jar" sourcepath="M2_REPO/mysql/mysql-connector-java/5.1.24/mysql-connector-java-5.1.24-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar" sourcepath="M2_REPO/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar" sourcepath="M2_REPO/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4-sources.jar"/>

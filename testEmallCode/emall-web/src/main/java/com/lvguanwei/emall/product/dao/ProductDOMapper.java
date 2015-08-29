@@ -2,11 +2,14 @@ package com.lvguanwei.emall.product.dao;
 
 import com.lvguanwei.emall.product.dao.model.ProductDO;
 import com.lvguanwei.emall.product.dao.model.ProductDOExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.InsertProvider;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
@@ -74,7 +77,7 @@ public interface ProductDOMapper {
         "#{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, ",
         "#{updateTime,jdbcType=TIMESTAMP})"
     })
-    @SelectKey(statement="select last_insert_id()", keyProperty="id", before=true, resultType=Long.class)
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(ProductDO record);
 
     /**
@@ -84,7 +87,7 @@ public interface ProductDOMapper {
      * @mbggenerated Tue Aug 25 18:54:18 CST 2015
      */
     @InsertProvider(type=ProductDOSqlProvider.class, method="insertSelective")
-    @SelectKey(statement="select last_insert_id()", keyProperty="id", before=true, resultType=Long.class)
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertSelective(ProductDO record);
 
     /**

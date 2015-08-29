@@ -10,6 +10,6 @@ public interface ProductService {
      * @author lvguanwei 2015年8月25日 下午7:27:11
      * @return
      */
-    public Long addProduct(ProductDO product);
+    public Integer addProduct(ProductDO product);
 
 }

@@ -14,9 +14,8 @@ public class ProductServiceImpl implements ProductService {
     private ProductDOMapper prodcutMapper;
 
     @Override
-    public Long addProduct(ProductDO product) {
-        // TODO Auto-generated method stub
-        return null;
+    public Integer addProduct(ProductDO product) {
+        return prodcutMapper.insertSelective(product);
     }
 
 }
